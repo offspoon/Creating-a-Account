@@ -1,3 +1,4 @@
+import random
 global user
 global passw
 user = 'something'
@@ -32,6 +33,16 @@ def main():
         else:
             print('Please type the options given to you')
 
+def verify():
+    x = random.randint(0,10)
+    print('Please type the verification number that was sent to you')
+    print(x)
+    userv = int(input(''))
+    if userv == x:
+        main()
+    else:
+        print('Sorry that is not the correct verification number that was sent to you, please try again')
+
 # Making account
 def making_the_account():
     global user
@@ -65,7 +76,7 @@ def login_to_account():
         enter_passw = input('What is your password?')
         
         if enter_user == user and enter_passw == passw:
-            main()
+            verify()
             access_to_account = True
             break
         else:
